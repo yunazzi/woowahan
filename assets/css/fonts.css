@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap');
+@font-face{
+    font-family: "Noto Sans";
+    src: url(../fonts/NotoSans.woff2)format('woff2');
+    font-weight: 400;
+}
+@font-face{
+    font-family: "Noto Sans";
+    src: url(../fonts/NotoSans.woff2)format('woff2');
+    font-weight: 700;
+}
+@font-face{
+    font-family: "BMhanna";
+    src: url(../fonts/BMHANNA.woff2)format('woff2');
+    font-weight: 400;
+}
+@font-face{
+    font-family: "BMhanna11";
+    src: url(../fonts/BMHANNA_11yrs.otf)format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face{
+    font-family: "BMhannapro";
+    src: url(../fonts/BMHANNAPro.otf)format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
