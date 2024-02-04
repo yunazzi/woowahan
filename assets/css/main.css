@@ -1,24 +1,13 @@
-
 /* sc-visual */
-
 .sc-visual{ position: relative;}
 .sc-visual .main-slide{height: calc(100vh - 95px);}
-.sc-visual video{ 
-    width: 100%; height: 100%;
-    object-fit: cover; 
-    filter: brightness(75%); 
-    pointer-events: none;
-    /* 비디오가 선택되지않음 */
-}
+.sc-visual video{ width: 100%; height: 100%; object-fit: cover; filter: brightness(75%); pointer-events: none; }
 .sc-visual .video-text{ display: flex; position: absolute; flex-direction: column; gap: 35px; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; text-align: center; }
 .sc-visual .sm-title{font-size: 22px; font-weight: 700; }
 .sc-visual .title{ font-size: 72px; font-weight: 400; font-family: "BMhanna11"; line-height: 1.4; }
 .sc-visual .title .flex{display: flex; justify-content: center;}
-
 /* 타이핑치듯 쓰는방법 */
 .sc-visual .title .flex i{opacity: 0;}
-
-/* slide가 active됐을때만(슬라이드에 도달했을때) 작동함 */
 .sc-visual .swiper-slide-active .title .flex i{opacity: 0; animation: fade 0.3s forwards; }
 .sc-visual .title .flex i:nth-child(1){animation-delay: 0.2s;}
 .sc-visual .title .flex i:nth-child(2){animation-delay: 0.4s;}
@@ -29,406 +18,110 @@
 .sc-visual .title .flex i:nth-child(7){animation-delay: 1.8s;}
 .sc-visual .title .flex i:nth-child(8){animation-delay: 2s;}
 .sc-visual .video-text .cate{font-size: 15px; font-weight: 700; }
-
-
-@keyframes fade{
-    0%{opacity: 0;}
-    100%{opacity: 1;}
-}
+@keyframes fade{ 0%{opacity: 0;} 100%{opacity: 1;} }
 .sc-visual .swiper-slide{overflow: hidden;}
-.sc-visual .swiper-slide.left-right img{
-    width: 120%; height: 100%;
-    max-width: none;
-    object-fit: cover;
-    transition: 5s linear; /* 모션에는 굴곡이 있어서 일정하게 동작하게끔 */
-    /* 위아래는 높이값을 늘려놓고 active일때 y값을 설정하면 됨 */
-}
-.sc-visual .swiper-slide-active.left-right img{
-    transform: translateX(-10%);
-}
-
-.sc-visual .swiper-slide.bottom-top img{
-    position: absolute;
-    bottom: 0;
-    /* 이미지 높이가 120% 이고 bottom값이 0이여서 아래서 위로 올라가는데 이미지가 잘리지 않음 */
-
-    width: 100%; height: 120%;
-    object-fit: cover;
-    transition: 5s linear;
-}
-.sc-visual .swiper-slide-active.bottom-top img{
-    transform: translateY(10%);
-}
-.sc-visual .main-slide .pagination{
-    display: flex;
-    position: absolute;
-    gap: 8px;
-    bottom: 49px; left: 50%;
-    transform: translateX(-50%);
-    width: 90px;
-    height: 8px;
-    z-index: 1;
-}
-.sc-visual .pagination .swiper-pagination-bullet{
-    opacity: 1;
-    width: 8px; height: 8px;
-    border-radius: 4px;
-    background: hsla(0,0%,100%,.5);
-    z-index: 9;
-    margin: 0;
-}
-.sc-visual .pagination .swiper-pagination-bullet-active{
-    background-color: #fff;
-    width: 20px;
-}
-
-
+.sc-visual .swiper-slide.left-right img{ width: 120%; height: 100%; max-width: none; object-fit: cover; transition: 5s linear; }
+.sc-visual .swiper-slide-active.left-right img{ transform: translateX(-10%); }
+.sc-visual .swiper-slide.bottom-top img{ position: absolute; bottom: 0; width: 100%; height: 120%; object-fit: cover; transition: 5s linear; }
+.sc-visual .swiper-slide-active.bottom-top img{ transform: translateY(10%); }
+.sc-visual .main-slide .pagination{ display: flex; position: absolute; gap: 8px; bottom: 49px; left: 50%; transform: translateX(-50%); width: 90px; height: 8px; z-index: 1; }
+.sc-visual .pagination .swiper-pagination-bullet{ opacity: 1; width: 8px; height: 8px; border-radius: 4px; background: hsla(0,0%,100%,.5); z-index: 9; margin: 0; }
+.sc-visual .pagination .swiper-pagination-bullet-active{ background-color: #fff; width: 20px; }
 
 
 /* sc-workstory */
-.sc-workstory{
-    margin-top: 160px;
-}
-.sc-workstory .group-content ul{
-    transition-timing-function: linear;
-}
-.sc-workstory .swiper-slide{
-    width: 180px;
-}
+.sc-workstory{ margin-top: 160px; }
+.sc-workstory .group-content ul{ transition-timing-function: linear; }
+.sc-workstory .swiper-slide{ width: 180px; }
 .sc-workstory .swiper-slide.odd{margin-top: 40px;}
-.sc-workstory .group-content a{
-    overflow: hidden;
-}
-.sc-workstory .group-content img{
-    position: relative;
-    width: 180px;
-    height: 245px;
-    border-radius: 10px;
-    object-fit: cover;
-    transition: transform .5s ease-in-out;
-    transform: scale(1);
-}
-.sc-workstory .group-content .image::after{
-    content: "";
-    display: block;
-    background: linear-gradient(180deg,transparent 50%,rgba(0,0,0,.5));
-    border-radius: 10px;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.sc-workstory .group-content .desc{
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.625;
-    color: #fff;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    z-index: 99;
-    padding: 16px 12px;
-    letter-spacing: -0.025em;
-}
-/* 안에 말줄임을 넣고 싶다면, .desc에 안에 span을 넣고 말줄임을 넣으면됨 */
-
-
-
+.sc-workstory .group-content a{ overflow: hidden; }
+.sc-workstory .group-content img{ position: relative; width: 180px; height: 245px; border-radius: 10px; object-fit: cover; transition: transform .5s ease-in-out; transform: scale(1); }
+.sc-workstory .group-content .image::after{ position: absolute; content: ""; background: linear-gradient(180deg,transparent 50%,rgba(0,0,0,.5)); border-radius: 10px; pointer-events: none; top: 0; left: 0; width: 100%; height: 100%; }
+.sc-workstory .group-content .desc{ position: absolute; font-size: 16px; font-weight: 700; line-height: 1.625; color: #fff; width: 100%; bottom: 0; z-index: 99; padding: 16px 12px; letter-spacing: -0.025em; }
 
 
 /* sc-service */
-
-.sc-service{
-    padding-top: 160px;
-    margin-bottom: 160px;
-}
-.sc-service .group-video{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 80px;
-    position: relative;
-}
-.sc-service .group-video video{
-    width: 780px;
-}
-.sc-service .control-playbtn{
-    opacity: 0;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-}
-.sc-service .play-wrap:hover .control-playbtn{
-    opacity: 1;
-}
+.sc-service{ padding-top: 160px; margin-bottom: 160px; }
+.sc-service .group-video{ display: flex; justify-content: center; margin-bottom: 80px; position: relative; }
+.sc-service .group-video video{ width: 780px; }
+.sc-service .control-playbtn{ position: absolute; opacity: 0; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.sc-service .play-wrap:hover .control-playbtn{ opacity: 1; }
 .sc-service .play-wrap:hover .control-playbtn .play{display: none;}
 .sc-service .play-wrap:hover .control-playbtn.on .play{display: block;}
 .sc-service .play-wrap:hover .control-playbtn.on .pause{display: none;}
 
 
-
 /* sc-green */
-.sc-green .green-content{
-    position: relative;
-    height: 680px;
-}
-.sc-green .group-greenimg{
-    background-image: url(https://woowahan-cdn.woowahan.com/static/image/main/pc/season_1_bg.jpg?af10f3b0);
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    min-height: 100%;
-    background-attachment: fixed;
-    background-position: 50% 50%;
-    background-size: cover;
-}   
-.sc-green .group-greendesc{
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-}
-.sc-green .group-greendesc p{
-    margin: 20px 0;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.75;
-}
-.sc-green .group-greendesc strong{
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1.5;
-}
-.sc-green .group-greendesc svg{
-    display: inline-block;
-}
-.sc-green .group-greendesc .bamin{
-    width: 110px;
-    margin: auto;
-}
-
+.sc-green .green-content{ position: relative; height: 680px; }
+.sc-green .group-greenimg{ position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url(https://woowahan-cdn.woowahan.com/static/image/main/pc/season_1_bg.jpg?af10f3b0); min-height: 100%; background-attachment: fixed; background-position: 50% 50%; background-size: cover; }   
+.sc-green .group-greendesc{ position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; }
+.sc-green .group-greendesc p{ margin: 20px 0; font-size: 16px; font-weight: 400; line-height: 1.75; }
+.sc-green .group-greendesc strong{ font-size: 36px; font-weight: 700; line-height: 1.5; }
+.sc-green .group-greendesc svg{ display: inline-block; }
+.sc-green .group-greendesc .bamin{ width: 110px; margin: auto; }
 
 
 /* sc-news */
-.sc-news{
-    padding: 120px 0;
-}
-.sc-news .group-news ul{
-    max-width: 820px;
-    margin: 0 auto;
-}
-.sc-news .news-item{
-    border-bottom: 1px solid #f3f4f5;
-}
-.sc-news .news-item a{
-    display: flex;
-    padding: 40px 20px;
-    gap: 40px;
-}
-.sc-news .news-item .img-box{
-    position: relative;
-    width: 200px; height: 160px;
-    overflow: hidden;
-}
-.sc-news .news-item .img-box:hover img{
-    transform: scale(1.1);
-    /* transition: all .5s linear;
-    여기에만 transition을 주면 안되는 이유는 hover시에만 작동하게끔 해서 original태그에도 넣어줘야함 */
-}
-.sc-news .news-item .img-box img{
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: all .5s linear;
-}
-.sc-news .news-item .img-box::after{
-    display: block;
-    content: "";
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 1px solid rgba(0,0,0,.1);
-}
-.sc-news .news-item .desc-wrap{
-    color: #232324;
-    flex: 1;
-}
-.sc-news .news-item .title{
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-.sc-news .news-item .desc{
-    margin-bottom: 10px;
-    font-size: 16px;
-    line-height: 1.625;
-
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-}
-.sc-news .news-item .date{
-    color: #a6a7a9;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.7142857143;
-}
-
+.sc-news{ padding: 120px 0; }
+.sc-news .group-news ul{ max-width: 820px; margin: 0 auto; }
+.sc-news .news-item{ border-bottom: 1px solid #f3f4f5; }
+.sc-news .news-item a{ display: flex; padding: 40px 20px; gap: 40px; }
+.sc-news .news-item .img-box{ position: relative; width: 200px; height: 160px; overflow: hidden; }
+.sc-news .news-item .img-box:hover img{ transform: scale(1.1); }
+.sc-news .news-item .img-box img{ width: 100%; height: 100%; object-fit: cover; transition: all .5s linear; }
+.sc-news .news-item .img-box::after{ position: absolute; content: ""; pointer-events: none; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid rgba(0,0,0,.1); }
+.sc-news .news-item .desc-wrap{ color: #232324; flex: 1; }
+.sc-news .news-item .title{ display: block; font-size: 20px; font-weight: 700; line-height: 1.6; margin-bottom: 10px; }
+.sc-news .news-item .desc{ margin-bottom: 10px; font-size: 16px; line-height: 1.625; text-overflow: ellipsis; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.sc-news .news-item .date{ color: #a6a7a9; font-size: 14px; font-weight: 400; line-height: 1.7142857143; }
 
 
 /* sc-font */
-.sc-font{
-    padding: 120px 0 136px;
-    background-color: #232324;
-}
-.sc-font .group-title{
-    color: #fff;
-}
-.sc-font .control-btn{
-    margin: 60px auto 0;
-}
-.sc-font .control-btn .btn-more{
-    background-color: rgba(0,0,0,.3);
-    color: #fff;
-    border: 1px solid #fff;
-}
-
-.sc-font .font-list{
-    display: flex;
-    overflow: hidden;
-}
-.sc-font .font-list ul{
-    display: flex;
-    gap: 16px;
-    padding-left: 16px;
-    animation: marquee 25s linear infinite;
-}
+.sc-font{ padding: 120px 0 136px; background-color: #232324; }
+.sc-font .group-title{ color: #fff; }
+.sc-font .control-btn{ margin: 60px auto 0; }
+.sc-font .control-btn .btn-more{ background-color: rgba(0,0,0,.3); color: #fff; border: 1px solid #fff; }
+.sc-font .font-list{ display: flex; overflow: hidden; }
+.sc-font .font-list ul{ display: flex; gap: 16px; padding-left: 16px; animation: marquee 25s linear infinite; }
+@keyframes marquee { 0%{transform: translateX(0);} 100%{transform: translateX(-100%);} }
+.sc-font .font-list li{ position: relative; width: 160px; height: 128px; border-radius: 8px; background: #37373a; padding: 16px; }
+.sc-font .font-box{ display: flex; flex-direction: column; }
+.sc-font .font-title{ color: #6c6d6f; font-size: 16px; font-weight: 700; }
+.sc-font .font-style{ position: absolute; bottom: 20px; right: 20px; }
 
 
-@keyframes marquee {
-    0%{transform: translateX(0);}
-    100%{transform: translateX(-100%);}
-}
-
-
-.sc-font .font-list li{
-    width: 160px; height: 128px;
-    border-radius: 8px;
-    background: #37373a;
-    padding: 16px;
-    position: relative;
-}
-.sc-font .font-box{
-    display: flex;
-    flex-direction: column;
-}
-.sc-font .font-title{
-    color: #6c6d6f;
-    font-size: 16px;
-    font-weight: 700;
-}
-.sc-font .font-style{
-    position: absolute;
-    bottom: 20px; right: 20px;
-}
-
-br.m,
-br.t{display: none;}
+br.m, br.t{display: none;}
 
 
 /* 768px */
 @media (max-width:980px) {
-    .sc-visual .sm-title{
-        font-size: 17px;
-    }
-    .sc-visual .title{
-        font-size: 52px;
-    }
-    .sc-visual .video-text{
-        gap: 30px;
-    }
-    .sc-visual .video-text .cate{
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-
+    .sc-visual .sm-title{ font-size: 17px; }
+    .sc-visual .title{ font-size: 52px; }
+    .sc-visual .video-text{ gap: 30px; }
+    .sc-visual .video-text .cate{ font-size: 14px; font-weight: 500; }
+    .sc-service .play-wrap{ width: 100%; }
+    .sc-service .group-video video{ width: 100%; height: auto; }
+    .sc-font .font-list ul{ animation: marquee 20s linear infinite; }
     br.t{display: block;}
-
-    .sc-service .play-wrap{
-        width: 100%;
-    }
-    .sc-service .group-video video{
-        width: 100%;
-        height: auto;
-    }
-    .sc-font .font-list ul{
-        animation: marquee 20s linear infinite;
-    }
-    
 }
 /* 320까지; */
 @media (max-width:750px) {
-
-
-    .sc-visual .title{
-        font-size: clamp(42px, 9.6vw ,72px);
-    }
-    
+    section .group-title .headline { font-size: 30px; line-height: 1.4; }
+    section .control-btn { margin: 60px auto 0; }
+    .sc-visual .title{ font-size: clamp(42px, 9.6vw ,72px); }
+    .sc-news .news-item a { padding: 30px 24px; gap: 16px; }
+    .sc-news .news-item .img-box { width: 100px; height: 80px; }
+    .sc-news .news-item .title { font-size: 16px; margin-bottom: 5px; }
+    .sc-news .news-item .date { font-size: 12px; margin-bottom: 8px; }
     br.m{display: none;}
     br.t{display: none;}
-    
-
-    .group-title .headline {
-        font-size: 30px;
-        line-height: 1.4;
-    }
-
-    .sc-news .news-item a {
-        padding: 30px 24px;
-        gap: 16px;
-    }
-    .sc-news .news-item .img-box {
-        width: 100px; height: 80px;
-    }
-    .sc-news .news-item .title {
-        font-size: 16px;
-        margin-bottom: 5px;
-    }.sc-news .news-item .date {
-        font-size: 12px;
-        margin-bottom: 8px;
-    }
-    .control-btn {
-        margin: 60px auto 0;
-    }
-    
 }
 @media (max-width:480px) {
-    br.m{display: block;}
+    section .group-title { margin-bottom: 80px;}
     .sc-green .group-greendesc {width: 100%;}
-    .group-title { margin-bottom: 80px;}
+    .sc-news .group-title { margin: 0; }
+    .sc-news .news-item .title { display: -webkit-box; color: #232324; text-overflow: ellipsis; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
     .sc-font.group-title { margin-bottom: 60px;}
-    .sc-news .group-title {
-        margin: 0;
-    }
-    .sc-news .news-item .title {
-    display: -webkit-box;
-    color: #232324;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    }
-    .sc-font .font-list ul{
-        animation: marquee 40s linear infinite;
-    }
+    .sc-font .font-list ul{ animation: marquee 40s linear infinite; }
+    br.m{display: block;}
 }
