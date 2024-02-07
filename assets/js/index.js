@@ -152,6 +152,7 @@
         // touchRatio:0,손컨트롤안됨
         loop:true
     })
+    
     $('.sc-workstory .group-content').hover(function(){
         storyslide.autoplay.stop();
     },function(){

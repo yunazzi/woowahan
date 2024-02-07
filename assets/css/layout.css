@@ -111,7 +111,7 @@
     .wrapper{ padding-top: 63px; }
     .header .logo svg{height: 23px;}
     .header .group-header{height: 63px;}
-    .gnb{display: none;}
+    .header .group-header .gnb{display: none;}
     .header .util-area{display: none;}
     .header .btn-catecory{display: block;}
 }
