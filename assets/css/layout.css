@@ -6,7 +6,7 @@
 .wrapper{ padding-top: 95px; }
 
 .header{ position: fixed; top: 0; left: 0; background: #fff; z-index: 100; width: 100%; transition: 0.3s; }
-.header .btn-catecory{display: none;}
+.header .btn-category{display: none;}
 /* 스크롤시 */
 .header.hide{transform: translateY(-100%);}
 .header::before{ position: absolute; top: 100%; left: 0; width: 100%; height: 0px; background: #fff; content: ''; transition: 0.3s; border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
@@ -82,7 +82,7 @@
 .group-menu-gnb a{ display: block; line-height: 50px; text-align-last: left; }
 .menu .menu-main .nav{ font-size: 24px; font-weight: 700; align-items: center; color: #232324; height: 74px; line-height: 74px; }
 .menu .menu-main{ display: flex; justify-content: space-between; align-items: center; }
-.menu .menu-sub{ visibility: hidden; opacity: 0; max-height: 0; font-size: 16px; font-weight: 400; margin-left: 24px; color: #6c6d6f; text-align: center; transition: max-height .4s, opacity .6s; }
+.menu .menu-sub{ visibility: hidden; opacity: 0; max-height: 0; font-size: 16px; font-weight: 400; margin-left: 24px; color: #6c6d6f; text-align: center; transition: max-height .4s, opacity .4s; }
 .menu .menu-sub.show{ visibility: visible; opacity: 1; max-height: 250px; }
 .menu .menu-sub a{ line-height: 1.75; margin-bottom: 16px; }
 .menu .emoji{ font-family: "BMhanna11"; font-size: 16px; font-weight: 900; line-height: 1; margin-left: 5px; }
@@ -113,7 +113,7 @@
     .header .group-header{height: 63px;}
     .header .group-header .gnb{display: none;}
     .header .util-area{display: none;}
-    .header .btn-catecory{display: block;}
+    .header .btn-category{display: block;}
 }
 /* 320까지; */
 @media (max-width:750px) {

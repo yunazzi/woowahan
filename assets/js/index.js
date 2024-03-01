@@ -23,33 +23,7 @@
         firstChk();
     })
     
-    // 타이핑효과
-
-    // gsap.to(
-    //     repeat:1,
-
-    // )
-    // var repeat = gsap.timeline({
-    //     repeat:1
-    // })
-    
-
-    // var tl = gsap.timeline({
-    //     repeat:1
-    // });
-
-    // // stagger - 차례로 애니메이션 실행해줌
-    // tl.to('.menu .group-menu-gnb .emoji i',{
-    //     x:-300,
-    //     duration:1,
-    //     stageer:0.4,
-    // })
-    // tl.from('.menu .group-menu-gnb .emoji i',{
-    //     y:300,
-    //     duration:1,
-    //     stageer:0.4,
-    // })
-    
+    //타이핑효과
     gsap.to('.menu .group-menu-gnb .emoji i',{
         yoyo:true,
         repeat:1,
@@ -58,25 +32,20 @@
         }
     })
 
-
-
-
-
+    //pc
     $('.lang-area button').click(function(){
         $('.lang-area button').prop('disabled', false);
-        // prop은 html을 설정하는 매서드
         $(this).prop('disabled', true);
     })
-
+    //mobile
     $('.nf-lang button').click(function(){
         $('.nf-lang button').prop('disabled', false);
-        // prop은 html을 설정하는 매서드
         $(this).prop('disabled', true);
     })
 
 
-
-    $('.btn-catecory').click(function(){
+    //햄버거바
+    $('.btn-category').click(function(){
         $('.menu').addClass('on')
         $('.menu-dimmed').addClass('')
         $('.menu-inner').removeClass('fade')
@@ -85,7 +54,6 @@
             $(this).addClass('.menu-dimmed')
         }else{
             $(this).removeClass('.menu-dimmed')
-            
         }
     })
     $('.close').click(function(){
@@ -96,14 +64,19 @@
     $('.menu-main').click(function(){
         $(this).siblings('.menu-sub').toggleClass('show')
     })
-
-
-
-
-
+    
+    $('.btn-category').click(function (e) {
+        e.preventDefault();
+        $('.dimmed').addClass('active');
+        $('body').addClass('hidden');
+      })
+      $('.close').click(function (e) {
+        e.preventDefault();
+        $('.dimmed').removeClass('active');
+        $('body').removeClass('hidden');
+      })
 
     // 스크롤
-
     let lastScroll = 0;
 
     $(window).scroll(function(){
@@ -127,7 +100,7 @@
 
     })
 
-    // 슬라이더
+    // 메인비주얼 슬라이드
     var swiper = new Swiper(".main-slide",{
         autoplay:{
             delay:3000,
@@ -140,6 +113,7 @@
         }
     })
 
+    //sc-workstory
     var storyslide = new Swiper(".sc-workstory .group-content",{
         freeMode:true,
         speed:3000,
@@ -152,13 +126,12 @@
         // touchRatio:0,손컨트롤안됨
         loop:true
     })
-    
+    //호버시 슬라이드 재생 멈추기
     $('.sc-workstory .group-content').hover(function(){
         storyslide.autoplay.stop();
     },function(){
         storyslide.autoplay.start();
     })
-
 
 
     // 비디오
@@ -179,7 +152,6 @@
 
 
     //sc-news
-
     $('.group-news li').hover(
         function(){
             $(this).css({backgroundColor:'#f9f9fa'})
@@ -189,7 +161,6 @@
 
 
     //footer
-
     $('.footer-relate button').click(function(){
         
         let ul = $(this).siblings('ul')
@@ -201,22 +172,10 @@
 
     //dimmed
 
-    // $('.btn-catecory').click(function(){
+    // $('.btn-category').click(function(){
     //     $('body').addClass('dimmed');
         
     // })
     // $('.close').click(function(){
     //     $('body').removeClass('dimmed');
     // })
-
-    $('.btn-catecory').click(function (e) {
-      e.preventDefault();
-      $('.dimmed').addClass('active');
-      $('body').addClass('hidden');
-      
-    })
-    $('.close').click(function (e) {
-      e.preventDefault();
-      $('.dimmed').removeClass('active');
-      $('body').removeClass('hidden');
-    })
